@@ -3,658 +3,297 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dr. Hua Chang | Associate Professor of Marketing | Towson University</title>
+<meta name="description" content="Dr. Hua Chang is a Professor of Marketing, Program Director of the Master's in Marketing Intelligence, Faculty Lead at the Towson AI Institute, and AI Research Fellow at Towson University.">
+<meta name="theme-color" content="#A51C30">
+<title>Dr. Hua Chang | Professor of Marketing | Towson University</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap');
+:root{
+  --crimson:#A51C30;--crimson-dark:#7E1526;--crimson-tint:rgba(165,28,48,.07);--crimson-border:rgba(165,28,48,.3);
+  --ink:#1e1e1e;--text:#2b2b2b;--text-dim:#5f5f5f;
+  --bg:#ffffff;--bg2:#f5f4f1;--card:#ffffff;--border:#e1dfda;
+  --serif:'Source Serif 4',Georgia,'Times New Roman',serif;
+  --page-max:1080px;--radius:4px;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;font-size:15px;overflow-x:hidden;}
+a{color:inherit;}
 
-  :root {
-    --gold: #C5A55A;
-    --gold-light: #E8D5A0;
-    --navy: #1B2A4A;
-    --navy-deep: #0F1A2E;
-    --slate: #3A4A5C;
-    --text: #2D3748;
-    --text-light: #64748B;
-    --bg: #FAFBFC;
-    --white: #FFFFFF;
-    --border: #E2E8F0;
-    --accent-bg: #F1F5F9;
-  }
+/* NAV */
+.nav{position:fixed;top:0;width:100%;z-index:999;background:#fff;border-top:4px solid var(--crimson);border-bottom:1px solid var(--border);transition:box-shadow .3s;}
+.nav.scrolled{box-shadow:0 2px 16px rgba(0,0,0,.08);}
+.nav-inner{max-width:var(--page-max);margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 2rem;height:64px;}
+.nav-brand{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.nav-brand-icon{width:34px;height:34px;border-radius:2px;background:var(--crimson);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:700;font-size:.9rem;color:#fff;}
+.nav-brand-text{font-family:var(--serif);font-weight:700;font-size:1.1rem;color:var(--ink);}
+.nav-links{display:flex;gap:.25rem;list-style:none;}
+.nav-links a{display:block;padding:8px 14px;text-decoration:none;font-size:.85rem;font-weight:600;color:var(--ink);border-bottom:2px solid transparent;transition:all .2s;}
+.nav-links a:hover{color:var(--crimson);}
+.nav-links a.active{color:var(--crimson);border-bottom-color:var(--crimson);}
+.hamburger{display:none;background:none;border:none;cursor:pointer;padding:6px;}
+.hamburger span{display:block;width:22px;height:2px;background:var(--ink);margin:5px 0;}
+.mob-menu{display:none;position:fixed;top:68px;left:0;right:0;background:#fff;border-bottom:1px solid var(--border);padding:1rem 2rem;z-index:998;box-shadow:0 8px 20px rgba(0,0,0,.08);}
+.mob-menu.open{display:block;}
+.mob-menu a{display:block;padding:10px 0;color:var(--ink);text-decoration:none;font-size:.92rem;font-weight:600;border-bottom:1px solid var(--border);}
+.mob-menu a:last-child{border:none;}
+.mob-menu a.active{color:var(--crimson);}
 
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+/* HERO */
+.hero{padding:150px 2rem 80px;background:#fff;border-bottom:1px solid var(--border);}
+.hero-inner{max-width:var(--page-max);margin:0 auto;display:grid;grid-template-columns:1fr 280px;gap:3.5rem;align-items:center;}
+.hero-badge{display:inline-block;padding-left:12px;border-left:3px solid var(--crimson);font-size:.75rem;font-weight:700;color:var(--crimson);letter-spacing:.08em;text-transform:uppercase;margin-bottom:1.5rem;}
+.hero h1{font-family:var(--serif);font-size:3.3rem;font-weight:700;line-height:1.1;color:var(--ink);letter-spacing:-.01em;margin-bottom:.75rem;}
+.hero h1 .hl{color:var(--crimson);}
+.hero-sub{font-family:var(--serif);font-size:1.3rem;color:var(--text);margin-bottom:1.25rem;}
+.hero-roles{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.75rem;}
+.hero-role{padding:6px 12px;background:var(--bg2);border:1px solid var(--border);font-size:.8rem;color:var(--text);font-weight:500;}
+.hero-desc{color:var(--text-dim);font-size:.95rem;max-width:540px;line-height:1.75;margin-bottom:2rem;}
+.hero-cta{display:flex;gap:.75rem;flex-wrap:wrap;}
+.hero-photo{width:290px;height:300px;overflow:hidden;border:1px solid var(--border);border-bottom:4px solid var(--crimson);background:var(--bg2);display:flex;align-items:center;justify-content:center;box-shadow:0 12px 30px rgba(0,0,0,.08);}
+.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center 25%;display:block;}
+.photo-ph{text-align:center;color:var(--text-dim);font-size:.8rem;padding:1.5rem;}
+.photo-ph .ini{font-family:var(--serif);font-size:3.2rem;font-weight:700;color:var(--crimson);display:block;margin-bottom:.5rem;}
 
-  html { scroll-behavior: smooth; }
+/* BUTTONS */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 26px;border-radius:2px;font-size:.85rem;font-weight:600;text-decoration:none;cursor:pointer;transition:all .2s;}
+.btn-primary{background:var(--crimson);color:#fff;border:1px solid var(--crimson);}
+.btn-primary:hover{background:var(--crimson-dark);border-color:var(--crimson-dark);}
+.btn-outline{background:#fff;color:var(--ink);border:1px solid var(--ink);}
+.btn-outline:hover{background:var(--ink);color:#fff;}
 
-  body {
-    font-family: 'Inter', -apple-system, sans-serif;
-    color: var(--text);
-    background: var(--bg);
-    line-height: 1.7;
-    font-size: 16px;
-  }
+/* SECTIONS */
+.sec{padding:5rem 2rem;}
+.sec-alt{background:var(--bg2);}
+.sec-inner{max-width:var(--page-max);margin:0 auto;}
+.sec-label{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--crimson);margin-bottom:.5rem;}
+.sec-title{font-family:var(--serif);font-size:2rem;font-weight:700;color:var(--ink);margin-bottom:.5rem;line-height:1.25;}
+.sec-desc{font-size:.95rem;color:var(--text-dim);max-width:640px;margin-bottom:2.5rem;line-height:1.75;}
+.page-hero{padding:140px 2rem 50px;background:#fff;border-bottom:1px solid var(--border);}
+.page-hero h1{font-family:var(--serif);font-size:2.6rem;font-weight:700;color:var(--ink);margin-bottom:.75rem;line-height:1.15;}
+.page-hero h1::after{content:'';display:block;width:56px;height:4px;background:var(--crimson);margin-top:1rem;}
+.page-hero .sec-desc{margin-bottom:0;}
+.mt{margin-top:1.5rem;}
 
-  /* ---- NAV ---- */
-  nav {
-    position: fixed; top: 0; width: 100%; z-index: 100;
-    background: rgba(255,255,255,0.95);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border);
-    transition: box-shadow 0.3s;
-  }
-  nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.06); }
-  .nav-inner {
-    max-width: 1100px; margin: 0 auto;
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 0 2rem; height: 64px;
-  }
-  .nav-logo {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.15rem; font-weight: 600; color: var(--navy);
-    text-decoration: none; letter-spacing: -0.02em;
-  }
-  .nav-links { display: flex; gap: 2rem; list-style: none; }
-  .nav-links a {
-    text-decoration: none; color: var(--text-light);
-    font-size: 0.875rem; font-weight: 500;
-    transition: color 0.2s; letter-spacing: 0.01em;
-  }
-  .nav-links a:hover { color: var(--navy); }
-  .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
-  .hamburger span { display: block; width: 22px; height: 2px; background: var(--navy); margin: 5px 0; transition: 0.3s; }
+/* STATS */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:2rem;}
+.stat-card{text-align:center;padding:1.25rem .75rem;background:#fff;border:1px solid var(--border);border-top:3px solid var(--crimson);}
+.stat-num{font-family:var(--serif);font-size:1.9rem;font-weight:700;color:var(--crimson);display:block;line-height:1.2;}
+.stat-lbl{font-size:.68rem;color:var(--text-dim);margin-top:4px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;}
 
-  /* ---- HERO ---- */
-  .hero {
-    min-height: 92vh;
-    display: flex; align-items: center;
-    background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 60%, #2B3E5E 100%);
-    padding: 100px 2rem 80px;
-    position: relative; overflow: hidden;
-  }
-  .hero::before {
-    content: ''; position: absolute; top: -50%; right: -20%;
-    width: 800px; height: 800px;
-    background: radial-gradient(circle, rgba(197,165,90,0.08) 0%, transparent 70%);
-    border-radius: 50%;
-  }
-  .hero::after {
-    content: ''; position: absolute; bottom: -30%; left: -10%;
-    width: 600px; height: 600px;
-    background: radial-gradient(circle, rgba(197,165,90,0.05) 0%, transparent 70%);
-    border-radius: 50%;
-  }
-  .hero-inner {
-    max-width: 1100px; margin: 0 auto; width: 100%;
-    display: grid; grid-template-columns: 1fr 340px; gap: 4rem;
-    align-items: center; position: relative; z-index: 1;
-  }
-  .hero-text { color: #fff; }
-  .hero-badge {
-    display: inline-flex; align-items: center; gap: 8px;
-    background: rgba(197,165,90,0.15); border: 1px solid rgba(197,165,90,0.3);
-    padding: 6px 16px; border-radius: 100px;
-    font-size: 0.78rem; font-weight: 500; color: var(--gold-light);
-    letter-spacing: 0.05em; text-transform: uppercase;
-    margin-bottom: 1.5rem;
-  }
-  .hero-badge::before { content: ''; width: 6px; height: 6px; background: var(--gold); border-radius: 50%; }
-  .hero h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 3.4rem; font-weight: 700; line-height: 1.15;
-    margin-bottom: 1rem; letter-spacing: -0.02em;
-  }
-  .hero h1 span { color: var(--gold-light); }
-  .hero-subtitle {
-    font-size: 1.15rem; color: rgba(255,255,255,0.7);
-    margin-bottom: 0.5rem; font-weight: 400;
-  }
-  .hero-roles {
-    display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1.5rem 0 2rem;
-  }
-  .hero-role {
-    padding: 6px 14px; border-radius: 6px;
-    background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12);
-    font-size: 0.82rem; color: rgba(255,255,255,0.8); font-weight: 400;
-  }
-  .hero-cta-row { display: flex; gap: 1rem; margin-top: 2rem; flex-wrap: wrap; }
-  .btn {
-    display: inline-flex; align-items: center; gap: 8px;
-    padding: 12px 28px; border-radius: 8px;
-    font-size: 0.9rem; font-weight: 500;
-    text-decoration: none; transition: all 0.25s;
-    cursor: pointer; border: none;
-  }
-  .btn-primary { background: var(--gold); color: var(--navy-deep); }
-  .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
-  .btn-outline {
-    background: transparent; color: #fff;
-    border: 1px solid rgba(255,255,255,0.25);
-  }
-  .btn-outline:hover { border-color: rgba(255,255,255,0.5); background: rgba(255,255,255,0.05); }
+/* CARDS */
+.card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;}
+.card{display:block;padding:1.5rem;background:#fff;border:1px solid var(--border);border-radius:var(--radius);transition:all .2s;text-decoration:none;}
+.card:hover{border-color:var(--crimson);box-shadow:0 8px 22px rgba(0,0,0,.07);transform:translateY(-2px);}
+.card-icon{width:40px;height:40px;border-radius:2px;background:var(--crimson-tint);display:flex;align-items:center;justify-content:center;color:var(--crimson);font-size:1.1rem;margin-bottom:1rem;}
+.card h3{font-family:var(--serif);font-size:1.1rem;font-weight:700;color:var(--ink);margin-bottom:.4rem;}
+.card p{font-size:.85rem;color:var(--text-dim);line-height:1.6;}
+.card.center{text-align:center;}
 
-  .hero-photo {
-    width: 300px; height: 360px;
-    border-radius: 16px; overflow: hidden;
-    border: 3px solid rgba(197,165,90,0.3);
-    box-shadow: 0 30px 60px rgba(0,0,0,0.3);
-    position: relative;
-    background: linear-gradient(135deg, #2B3E5E, #3A4A5C);
-    display: flex; align-items: center; justify-content: center;
-  }
-  .photo-placeholder {
-    text-align: center; color: rgba(255,255,255,0.5);
-    font-size: 0.85rem; padding: 2rem;
-  }
-  .photo-placeholder .initials {
-    font-family: 'Playfair Display', serif;
-    font-size: 3.5rem; font-weight: 700; color: var(--gold);
-    margin-bottom: 0.5rem; display: block;
-  }
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1fr 340px;gap:2.5rem;}
+.about-text p{margin-bottom:1rem;line-height:1.8;font-size:.95rem;}
+.sidebar{background:#fff;border:1px solid var(--border);border-top:4px solid var(--crimson);padding:1.75rem;align-self:start;}
+.sidebar-title{font-family:var(--serif);font-weight:700;font-size:1.05rem;color:var(--ink);margin-bottom:1rem;padding-bottom:.5rem;border-bottom:1px solid var(--border);}
+.sidebar-title.next{margin-top:1.5rem;}
+.edu-item{margin-bottom:1rem;}
+.edu-degree{font-weight:600;font-size:.9rem;color:var(--ink);}
+.edu-school{font-size:.8rem;color:var(--text-dim);}
+.cert-list{list-style:none;}
+.cert-list li{display:flex;gap:8px;margin-bottom:.5rem;font-size:.83rem;}
+.cert-list li::before{content:'✓';color:var(--crimson);font-weight:800;flex-shrink:0;}
 
-  /* ---- SECTIONS ---- */
-  section { padding: 5rem 2rem; }
-  .container { max-width: 1100px; margin: 0 auto; }
-  .section-label {
-    font-size: 0.75rem; font-weight: 600; text-transform: uppercase;
-    letter-spacing: 0.1em; color: var(--gold);
-    margin-bottom: 0.75rem;
-  }
-  .section-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.2rem; font-weight: 600; color: var(--navy);
-    margin-bottom: 1rem; letter-spacing: -0.02em;
-  }
-  .section-desc {
-    font-size: 1.05rem; color: var(--text-light);
-    max-width: 640px; margin-bottom: 3rem; line-height: 1.75;
-  }
+/* PUBLICATIONS */
+.pub-list{list-style:none;}
+.pub-item{padding:1.25rem 0;border-bottom:1px solid var(--border);display:grid;grid-template-columns:68px 1fr auto;gap:1rem;align-items:start;}
+.pub-year{font-family:var(--serif);font-size:1rem;font-weight:700;color:var(--crimson);padding-top:2px;}
+.pub-year.review{color:var(--crimson-dark);font-family:'Inter',sans-serif;font-size:.75rem;text-transform:uppercase;letter-spacing:.04em;}
+.pub-year.wip{color:var(--text-dim);font-family:'Inter',sans-serif;font-size:.75rem;text-transform:uppercase;letter-spacing:.04em;}
+.pub-title{font-family:var(--serif);font-weight:600;font-size:1rem;color:var(--ink);margin-bottom:3px;line-height:1.45;}
+.pub-authors{font-size:.82rem;color:var(--text-dim);margin-bottom:3px;}
+.pub-journal{font-size:.82rem;font-style:italic;color:var(--text);}
+.pub-badge{padding:3px 9px;border-radius:2px;font-size:.66rem;font-weight:700;white-space:nowrap;margin-top:3px;}
+.badge-astar{background:var(--crimson);color:#fff;}
+.badge-a{background:var(--crimson-tint);color:var(--crimson);border:1px solid var(--crimson-border);}
+.badge-b{background:#eceae5;color:var(--ink);}
+.badge-c{background:#f3f2ef;color:var(--text-dim);}
+.sub-head{font-family:var(--serif);font-size:1.35rem;font-weight:700;color:var(--ink);margin:2.5rem 0 .5rem;}
+.expand-btn{background:#fff;border:1px solid var(--crimson);color:var(--crimson);padding:10px 24px;border-radius:2px;font-size:.82rem;font-weight:600;cursor:pointer;margin-top:1.5rem;transition:all .2s;font-family:inherit;}
+.expand-btn:hover{background:var(--crimson);color:#fff;}
+.hidden-pubs{display:none;}
+.hidden-pubs.show{display:block;}
 
-  /* ---- ABOUT ---- */
-  #about { background: var(--white); }
-  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
-  .about-text p { margin-bottom: 1rem; color: var(--text); line-height: 1.8; }
-  .stats-row {
-    display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem;
-    margin-top: 2.5rem;
-  }
-  .stat {
-    text-align: center; padding: 1.5rem 1rem;
-    background: var(--accent-bg); border-radius: 12px;
-  }
-  .stat-num {
-    font-family: 'Playfair Display', serif;
-    font-size: 2rem; font-weight: 700; color: var(--navy);
-    display: block;
-  }
-  .stat-label { font-size: 0.78rem; color: var(--text-light); margin-top: 4px; font-weight: 500; }
+/* AWARDS */
+.award-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;}
+.award-card{padding:1.25rem;background:#fff;border:1px solid var(--border);border-left:3px solid var(--crimson);}
+.award-card h4{font-family:var(--serif);font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:.25rem;}
+.award-card p{font-size:.8rem;color:var(--text-dim);line-height:1.5;}
 
-  .about-sidebar {
-    background: var(--accent-bg); border-radius: 16px;
-    padding: 2rem;
-  }
-  .sidebar-title {
-    font-weight: 600; font-size: 1rem; color: var(--navy);
-    margin-bottom: 1.25rem; padding-bottom: 0.75rem;
-    border-bottom: 2px solid var(--gold);
-  }
-  .edu-item { margin-bottom: 1.25rem; }
-  .edu-degree { font-weight: 600; font-size: 0.95rem; color: var(--navy); }
-  .edu-field { font-size: 0.88rem; color: var(--text); }
-  .edu-school { font-size: 0.82rem; color: var(--text-light); }
+/* COURSES */
+.course-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;}
+.course-card{padding:1.25rem 1.5rem;background:#fff;border:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;gap:1rem;transition:border-color .2s;}
+.course-card:hover{border-color:var(--crimson);}
+.course-name{font-family:var(--serif);font-weight:700;font-size:1rem;color:var(--ink);}
+.course-meta{font-size:.8rem;color:var(--text-dim);margin-top:3px;}
+.course-rating{font-weight:700;font-size:.9rem;color:var(--crimson);white-space:nowrap;}
 
-  .cert-list { list-style: none; margin-top: 1.5rem; }
-  .cert-list li {
-    display: flex; align-items: flex-start; gap: 8px;
-    margin-bottom: 0.6rem; font-size: 0.84rem; color: var(--text);
-  }
-  .cert-list li::before {
-    content: '✓'; color: var(--gold); font-weight: 700;
-    flex-shrink: 0; margin-top: 1px;
-  }
+/* SERVICE */
+.svc-group{margin-bottom:2.5rem;}
+.svc-group:last-child{margin-bottom:0;}
+.svc-group-title{font-family:var(--serif);font-size:1.2rem;font-weight:700;color:var(--ink);margin-bottom:.75rem;padding-bottom:.5rem;border-bottom:2px solid var(--crimson);display:flex;align-items:center;gap:10px;}
+.svc-group-title .ico{width:30px;height:30px;border-radius:2px;background:var(--crimson-tint);display:inline-flex;align-items:center;justify-content:center;font-size:.85rem;}
+.svc-item{padding:.85rem 0;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:baseline;gap:1rem;}
+.svc-item:last-child{border:none;}
+.svc-role{font-size:.9rem;font-weight:500;color:var(--ink);}
+.svc-role strong{color:var(--crimson);}
+.svc-detail{font-size:.8rem;color:var(--text-dim);white-space:nowrap;}
+.reviewer-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.75rem;}
+.reviewer-item{padding:.8rem 1rem;background:#fff;border:1px solid var(--border);font-size:.85rem;color:var(--ink);display:flex;justify-content:space-between;align-items:center;gap:1rem;}
+.reviewer-item .yrs{font-size:.75rem;color:var(--text-dim);white-space:nowrap;}
 
-  /* ---- RESEARCH ---- */
-  #research { background: var(--bg); }
-  .research-areas {
-    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
-    margin-bottom: 3rem;
-  }
-  .area-card {
-    padding: 1.75rem; background: var(--white);
-    border-radius: 12px; border: 1px solid var(--border);
-    transition: all 0.25s;
-  }
-  .area-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.06);
-    border-color: var(--gold);
-  }
-  .area-icon {
-    width: 44px; height: 44px; border-radius: 10px;
-    background: linear-gradient(135deg, var(--navy), var(--slate));
-    display: flex; align-items: center; justify-content: center;
-    color: var(--gold); font-size: 1.2rem; margin-bottom: 1rem;
-  }
-  .area-card h3 { font-size: 1rem; font-weight: 600; color: var(--navy); margin-bottom: 0.5rem; }
-  .area-card p { font-size: 0.85rem; color: var(--text-light); line-height: 1.6; }
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;}
+.contact-item{display:flex;gap:1rem;align-items:flex-start;margin-bottom:1.5rem;}
+.contact-icon{width:42px;height:42px;border-radius:2px;background:var(--crimson-tint);display:flex;align-items:center;justify-content:center;color:var(--crimson);font-size:1rem;flex-shrink:0;}
+.contact-label{font-size:.7rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:.06em;font-weight:600;margin-bottom:2px;}
+.contact-value{font-size:.95rem;color:var(--ink);}
+.contact-value a{color:var(--crimson);text-decoration:none;font-weight:500;}
+.contact-value a:hover{text-decoration:underline;}
+.contact-map{background:var(--ink);color:#fff;border-top:4px solid var(--crimson);padding:2rem;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;min-height:240px;}
+.map-label{font-family:var(--serif);font-size:1.35rem;font-weight:700;color:#fff;margin-bottom:.4rem;}
+.map-addr{font-size:.85rem;color:rgba(255,255,255,.75);line-height:1.6;}
+.map-badge{margin-top:1.25rem;padding-top:1.25rem;border-top:1px solid rgba(255,255,255,.15);font-size:.75rem;color:rgba(255,255,255,.6);letter-spacing:.06em;text-transform:uppercase;}
 
-  .pub-list { list-style: none; }
-  .pub-item {
-    padding: 1.5rem 0;
-    border-bottom: 1px solid var(--border);
-    display: grid; grid-template-columns: 60px 1fr auto; gap: 1.25rem;
-    align-items: start;
-  }
-  .pub-year {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.1rem; font-weight: 600; color: var(--gold);
-    padding-top: 2px;
-  }
-  .pub-title { font-weight: 600; font-size: 0.95rem; color: var(--navy); margin-bottom: 4px; line-height: 1.5; }
-  .pub-authors { font-size: 0.84rem; color: var(--text-light); margin-bottom: 4px; }
-  .pub-journal { font-size: 0.84rem; color: var(--text); font-style: italic; }
-  .pub-badge {
-    padding: 4px 10px; border-radius: 4px;
-    font-size: 0.7rem; font-weight: 600;
-    white-space: nowrap; margin-top: 2px;
-  }
-  .badge-a-star { background: #FEF3C7; color: #92400E; }
-  .badge-a { background: #DBEAFE; color: #1E40AF; }
-  .badge-b { background: #E0E7FF; color: #3730A3; }
+/* FOOTER */
+footer{background:var(--ink);padding:2.5rem 2rem;text-align:center;font-size:.8rem;color:rgba(255,255,255,.65);border-top:4px solid var(--crimson);}
+.foot-links{display:flex;flex-wrap:wrap;gap:1.5rem;justify-content:center;margin-bottom:1rem;}
+.foot-links a{color:#fff;text-decoration:none;font-weight:600;font-size:.85rem;}
+.foot-links a:hover{text-decoration:underline;}
 
-  .pub-more {
-    text-align: center; margin-top: 2rem;
-  }
-  .btn-text {
-    background: none; border: none; color: var(--gold); cursor: pointer;
-    font-size: 0.9rem; font-weight: 600; text-decoration: none;
-    display: inline-flex; align-items: center; gap: 6px;
-  }
-  .btn-text:hover { color: var(--navy); }
-
-  /* ---- TEACHING ---- */
-  #teaching { background: var(--white); }
-  .course-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
-  .course-card {
-    padding: 1.5rem; background: var(--bg);
-    border-radius: 12px; border: 1px solid var(--border);
-    display: flex; justify-content: space-between; align-items: center;
-  }
-  .course-name { font-weight: 600; font-size: 0.95rem; color: var(--navy); }
-  .course-meta { font-size: 0.82rem; color: var(--text-light); margin-top: 4px; }
-  .course-rating {
-    display: flex; align-items: center; gap: 4px;
-    font-weight: 600; font-size: 0.95rem; color: var(--gold);
-  }
-  .course-rating .star { font-size: 1rem; }
-
-  /* ---- CONTACT ---- */
-  #contact {
-    background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 100%);
-    color: #fff;
-  }
-  #contact .section-label { color: var(--gold-light); }
-  #contact .section-title { color: #fff; }
-  #contact .section-desc { color: rgba(255,255,255,0.6); }
-  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
-  .contact-item {
-    display: flex; gap: 1rem; align-items: flex-start;
-    margin-bottom: 1.75rem;
-  }
-  .contact-icon {
-    width: 44px; height: 44px; border-radius: 10px;
-    background: rgba(197,165,90,0.15);
-    display: flex; align-items: center; justify-content: center;
-    color: var(--gold); font-size: 1.1rem; flex-shrink: 0;
-  }
-  .contact-label { font-size: 0.78rem; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 2px; }
-  .contact-value { font-size: 0.95rem; color: #fff; }
-  .contact-value a { color: var(--gold-light); text-decoration: none; }
-  .contact-value a:hover { text-decoration: underline; }
-
-  .contact-map {
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 16px; padding: 2rem;
-    display: flex; flex-direction: column; justify-content: center;
-    align-items: center; text-align: center;
-    min-height: 260px;
-  }
-  .map-label {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.2rem; font-weight: 600; color: #fff;
-    margin-bottom: 0.5rem;
-  }
-  .map-address { font-size: 0.88rem; color: rgba(255,255,255,0.5); line-height: 1.6; }
-  .towson-logo {
-    margin-top: 1.5rem; padding-top: 1.5rem;
-    border-top: 1px solid rgba(255,255,255,0.1);
-    font-size: 0.82rem; color: rgba(255,255,255,0.4);
-    letter-spacing: 0.05em; text-transform: uppercase; font-weight: 500;
-  }
-
-  /* ---- FOOTER ---- */
-  footer {
-    background: var(--navy-deep);
-    padding: 2rem;
-    text-align: center;
-    font-size: 0.82rem;
-    color: rgba(255,255,255,0.35);
-    border-top: 1px solid rgba(255,255,255,0.06);
-  }
-
-  /* ---- RESPONSIVE ---- */
-  @media (max-width: 900px) {
-    .hero-inner { grid-template-columns: 1fr; text-align: center; }
-    .hero h1 { font-size: 2.4rem; }
-    .hero-photo { display: none; }
-    .hero-roles { justify-content: center; }
-    .hero-cta-row { justify-content: center; }
-    .about-grid { grid-template-columns: 1fr; }
-    .stats-row { grid-template-columns: repeat(2, 1fr); }
-    .research-areas { grid-template-columns: 1fr; }
-    .course-grid { grid-template-columns: 1fr; }
-    .contact-grid { grid-template-columns: 1fr; }
-    .pub-item { grid-template-columns: 50px 1fr; }
-    .pub-badge { display: none; }
-    .nav-links { display: none; }
-    .hamburger { display: block; }
-  }
+/* RESPONSIVE */
+@media(max-width:900px){
+.hero-inner,.about-grid,.contact-grid{grid-template-columns:1fr;}
+.hero-inner{text-align:center;}
+.hero-photo{margin:0 auto;order:-1;width:220px;height:228px;}
+.hero-roles,.hero-cta{justify-content:center;}
+.hero h1{font-size:2.4rem;}
+.stats{grid-template-columns:repeat(2,1fr);}
+.card-grid,.course-grid,.reviewer-grid,.award-grid{grid-template-columns:1fr;}
+.pub-item{grid-template-columns:56px 1fr;}
+.pub-badge{display:none;}
+.svc-item{flex-direction:column;gap:2px;}
+.nav-links{display:none;}
+.hamburger{display:block;}
+}
 </style>
 </head>
 <body>
 
-<!-- NAV -->
-<nav id="navbar">
+<nav class="nav" id="navbar">
   <div class="nav-inner">
-    <a href="#" class="nav-logo">Dr. Hua Chang</a>
+    <a class="nav-brand" href="index.html"><div class="nav-brand-icon">HC</div><span class="nav-brand-text">Dr. Hua Chang</span></a>
     <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#research">Research</a></li>
-      <li><a href="#teaching">Teaching</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="teaching.html">Teaching</a></li>
+      <li><a href="service.html">Service</a></li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>
-    <button class="hamburger" onclick="document.querySelector('.nav-links').style.display = document.querySelector('.nav-links').style.display === 'flex' ? 'none' : 'flex'">
-      <span></span><span></span><span></span>
-    </button>
+    <button class="hamburger" onclick="toggleMobile()" aria-label="Open menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
+<div class="mob-menu" id="mobMenu">
+  <a href="index.html" class="active">Home</a>
+  <a href="research.html">Research</a>
+  <a href="teaching.html">Teaching</a>
+  <a href="service.html">Service</a>
+  <a href="contact.html">Contact</a>
+</div>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-inner">
-    <div class="hero-text">
-      <div class="hero-badge">Towson University · College of Business &amp; Economics</div>
-      <h1>Dr. Hua <span>Chang</span></h1>
-      <p class="hero-subtitle">Associate Professor of Marketing</p>
+    <div>
+      <div class="hero-badge">Towson University &middot; College of Business &amp; Economics</div>
+      <h1>Dr. Hua <span class="hl">Chang</span></h1>
+      <p class="hero-sub">Professor of Marketing</p>
       <div class="hero-roles">
-        <span class="hero-role">Program Director, M.S. Marketing Intelligence</span>
+        <span class="hero-role">Program Director, Master's in Marketing Intelligence</span>
+        <span class="hero-role">Faculty Lead, Towson AI Institute (TAI)</span>
         <span class="hero-role">AI Research Fellow</span>
       </div>
-      <p style="color: rgba(255,255,255,0.55); font-size: 0.95rem; max-width: 520px; line-height: 1.75;">
-        Researching the intersection of brand management, digital marketing, and consumer behavior. 18+ peer-reviewed publications in top-tier marketing journals.
-      </p>
-      <div class="hero-cta-row">
-        <a href="#research" class="btn btn-primary">View Research →</a>
-        <a href="#contact" class="btn btn-outline">Get in Touch</a>
+      <p class="hero-desc">Researching how brands connect with consumers in digital environments, from AI-driven personalization to ethical consumption and consumer behavior across cultures.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="research.html">View Research &rarr;</a>
+        <a class="btn btn-outline" href="contact.html">Get in Touch</a>
       </div>
     </div>
     <div class="hero-photo">
-      <div class="photo-placeholder">
-        <span class="initials">HC</span>
-        <p>Replace with<br>professional headshot</p>
-      </div>
+      <img src="headshot.jpg" alt="Dr. Hua Chang, Professor of Marketing at Towson University" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+      <div class="photo-ph" style="display:none;"><span class="ini">HC</span><p>Save your photo as<br>headshot.jpg in this folder</p></div>
     </div>
   </div>
 </section>
 
-<!-- ABOUT -->
-<section id="about">
-  <div class="container">
+<section class="sec sec-alt">
+  <div class="sec-inner">
     <div class="about-grid">
       <div class="about-text">
-        <p class="section-label">About</p>
-        <h2 class="section-title">Scholar, Educator, Program Leader</h2>
-        <p>
-          I am an Associate Professor of Marketing and Program Director of the Master's in Marketing Intelligence program at Towson University's College of Business &amp; Economics. I also serve as an AI Research Fellow, exploring how artificial intelligence transforms marketing strategy and consumer engagement.
-        </p>
-        <p>
-          My research focuses on brand management, digital and social media marketing, and consumer behavior. I have published in leading academic outlets including the <em>Journal of Business Ethics</em>, <em>Journal of Business Research</em>, <em>International Journal of Advertising</em>, <em>European Journal of Marketing</em>, and <em>Journal of Product &amp; Brand Management</em>.
-        </p>
-        <p>
-          Prior to joining Towson, I held a faculty position at Philadelphia University and completed my Ph.D. in Marketing at Drexel University's LeBow College of Business. I teach undergraduate and graduate courses in Digital Marketing and Marketing Principles, consistently earning high student evaluations.
-        </p>
-        <div class="stats-row">
-          <div class="stat"><span class="stat-num">18+</span><span class="stat-label">Journal Publications</span></div>
-          <div class="stat"><span class="stat-num">20+</span><span class="stat-label">Conference Papers</span></div>
-          <div class="stat"><span class="stat-num">4.6</span><span class="stat-label">Avg. Teaching Score</span></div>
-          <div class="stat"><span class="stat-num">12+</span><span class="stat-label">Years at Towson</span></div>
+        <p class="sec-label">About</p>
+        <h2 class="sec-title">Scholar, Educator, Program Leader</h2>
+        <p>Hua Chang (Ph.D., Drexel University) is a Professor of Marketing, Program Director of the Master's in Marketing Intelligence program, and AI Research Fellow at Towson University's College of Business &amp; Economics. He joined Towson in 2016. He also serves as a Faculty Lead at the Towson AI Institute (TAI), where he builds cross-disciplinary research collaborations on human-AI interaction in consumer and organizational contexts.</p>
+        <p>His research spans brand management, digital and social media marketing, and consumer behavior, with a growing focus on consumer and marketing applications of AI, including human-AI collaboration in customer service, AI-driven personalization, and consumer responses to AI-generated content. He has authored 18 peer-reviewed journal articles in outlets including the <em>European Journal of Marketing</em>, <em>Journal of Business Ethics</em>, <em>Journal of Business Research</em>, <em>International Journal of Advertising</em>, <em>Journal of Product &amp; Brand Management</em>, <em>Journal of Services Marketing</em>, and <em>Journal of Marketing Communications</em>.</p>
+        <p>He teaches undergraduate and graduate courses in Digital Marketing and Principles of Marketing, consistently earning student evaluations above 4.5 out of 5. Before Towson, he held faculty positions at Philadelphia University and Drexel University.</p>
+        <div class="stats">
+          <div class="stat-card"><span class="stat-num">18</span><span class="stat-lbl">Journal Articles</span></div>
+          <div class="stat-card"><span class="stat-num">20+</span><span class="stat-lbl">Conference Papers</span></div>
+          <div class="stat-card"><span class="stat-num">4.6</span><span class="stat-lbl">Avg. Teaching Score</span></div>
+          <div class="stat-card"><span class="stat-num">10+</span><span class="stat-lbl">Years at Towson</span></div>
         </div>
       </div>
-      <div class="about-sidebar">
+      <aside class="sidebar">
         <h3 class="sidebar-title">Education</h3>
-        <div class="edu-item">
-          <div class="edu-degree">Ph.D. in Marketing</div>
-          <div class="edu-field">LeBow College of Business</div>
-          <div class="edu-school">Drexel University, 2014</div>
-        </div>
-        <div class="edu-item">
-          <div class="edu-degree">M.A. in Mass Communication</div>
-          <div class="edu-field">Murrow College of Communication</div>
-          <div class="edu-school">Washington State University, 2008</div>
-        </div>
-        <div class="edu-item">
-          <div class="edu-degree">B.A. in Business English</div>
-          <div class="edu-school">Beihang University, Beijing, 2000</div>
-        </div>
-
-        <h3 class="sidebar-title" style="margin-top:2rem;">Certifications</h3>
+        <div class="edu-item"><div class="edu-degree">Ph.D., Marketing</div><div class="edu-school">Drexel University, LeBow College of Business &middot; 2014</div></div>
+        <div class="edu-item"><div class="edu-degree">M.A., Mass Communication</div><div class="edu-school">Washington State University, Murrow College &middot; 2008</div></div>
+        <div class="edu-item"><div class="edu-degree">B.A., Business English</div><div class="edu-school">Beihang University, Beijing &middot; 2000</div></div>
+        <h3 class="sidebar-title next">Certifications</h3>
         <ul class="cert-list">
-          <li>Harvard "Teaching with AI" Certificate</li>
-          <li>AI for Marketing Certification</li>
-          <li>Google Ads Certified</li>
-          <li>Google Analytics Certified</li>
-          <li>Inbound Marketing Certified</li>
+          <li>Harvard Business Impact "Teaching with AI"</li>
+          <li>AI for Marketing</li>
+          <li>Marketing Automation with AI</li>
+          <li>Google Ads</li>
+          <li>Google Analytics</li>
+          <li>Inbound Marketing</li>
         </ul>
-      </div>
+      </aside>
     </div>
   </div>
 </section>
 
-<!-- RESEARCH -->
-<section id="research">
-  <div class="container">
-    <p class="section-label">Research</p>
-    <h2 class="section-title">Publications &amp; Scholarship</h2>
-    <p class="section-desc">My research investigates how brands connect with consumers in digital environments, with a focus on brand strategy, AI-driven personalization, and ethical consumption.</p>
-
-    <div class="research-areas">
-      <div class="area-card">
-        <div class="area-icon">◆</div>
-        <h3>Brand Management</h3>
-        <p>Brand positioning, brand ownership, artist-brand alliances, cross-border brand acquisitions, and brand moral failures.</p>
-      </div>
-      <div class="area-card">
-        <div class="area-icon">◈</div>
-        <h3>Digital &amp; Social Media Marketing</h3>
-        <p>AI personalization, online product customization, consumer-brand relationships on social media, and digital consumer engagement.</p>
-      </div>
-      <div class="area-card">
-        <div class="area-icon">◇</div>
-        <h3>Consumer Behavior</h3>
-        <p>Construal level theory, psychological ownership, ethical judgment, green advertising, and the role of authenticity in consumption.</p>
-      </div>
-    </div>
-
-    <h3 style="font-size:1.1rem; font-weight:600; color:var(--navy); margin-bottom:1.5rem;">Selected Publications</h3>
-    <ul class="pub-list">
-      <li class="pub-item">
-        <span class="pub-year">2025</span>
-        <div>
-          <div class="pub-title">Going the Extra Mile: Engaging Consumers through AI Personalized Communication on Social Media</div>
-          <div class="pub-authors">Chang, H., Zhang, L., Lei, S., &amp; Yan, M.</div>
-          <div class="pub-journal">Journal of Marketing Communications (forthcoming)</div>
-        </div>
-        <span class="pub-badge badge-b">ABDC: B</span>
-      </li>
-      <li class="pub-item">
-        <span class="pub-year">2025</span>
-        <div>
-          <div class="pub-title">Let's Focus on the Magic of an Artist: The Artist Contagion Effect on Products that Feature Art</div>
-          <div class="pub-authors">Kim, P. &amp; Chang, H.</div>
-          <div class="pub-journal">European Journal of Marketing, 59(1), 1–20</div>
-        </div>
-        <span class="pub-badge badge-a-star">ABDC: A*</span>
-      </li>
-      <li class="pub-item">
-        <span class="pub-year">2023</span>
-        <div>
-          <div class="pub-title">When Does Customization Improve Brand Attitude?</div>
-          <div class="pub-authors">Kim, P., Chang, H., Vaidyanathan, R., &amp; Stoel, L.</div>
-          <div class="pub-journal">Journal of Product &amp; Brand Management, 32(8), 1233–47</div>
-        </div>
-        <span class="pub-badge badge-a">ABDC: A</span>
-      </li>
-      <li class="pub-item">
-        <span class="pub-year">2023</span>
-        <div>
-          <div class="pub-title">Mental Conversion: A Customer Service Strategy Impacting Shopping Experiences</div>
-          <div class="pub-authors">Meng, Y., Gould, S.J., Song, L., Chang, H., &amp; Vaziri, S.</div>
-          <div class="pub-journal">Journal of Services Marketing, 37(4), 464–77</div>
-        </div>
-        <span class="pub-badge badge-a">ABDC: A</span>
-      </li>
-      <li class="pub-item">
-        <span class="pub-year">2022</span>
-        <div>
-          <div class="pub-title">An Integrated Model of Congruence and Credibility in Celebrity Endorsement</div>
-          <div class="pub-authors">Lee, J.-S., Chang, H., &amp; Zhang, L.</div>
-          <div class="pub-journal">International Journal of Advertising, 41(7), 1358–1381</div>
-        </div>
-        <span class="pub-badge badge-a">ABDC: A</span>
-      </li>
-      <li class="pub-item">
-        <span class="pub-year">2022</span>
-        <div>
-          <div class="pub-title">Contesting Dishonesty: When and Why Perspective-Taking Decreases Ethical Tolerance of Marketplace Deception</div>
-          <div class="pub-authors">Xie, G.-X., Chang, H., &amp; Rank-Christman, T.</div>
-          <div class="pub-journal">Journal of Business Ethics, 175, 117–133</div>
-        </div>
-        <span class="pub-badge badge-a">ABDC: A</span>
-      </li>
-      <li class="pub-item">
-        <span class="pub-year">2021</span>
-        <div>
-          <div class="pub-title">How Counterfeit Dominance Affects Luxury Fashion Brand Owners' Perceptions: A Cross-Cultural Examination</div>
-          <div class="pub-authors">Song, L., Meng, Y., Chang, H., Li, W., &amp; Tan, K.</div>
-          <div class="pub-journal">Journal of Business Research, 130, 1–13</div>
-        </div>
-        <span class="pub-badge badge-a">ABDC: A</span>
-      </li>
-      <li class="pub-item">
-        <span class="pub-year">2015</span>
-        <div>
-          <div class="pub-title">It's No Longer Mine: The Role of Brand Ownership and Advertising in Cross-Border Brand Acquisitions</div>
-          <div class="pub-authors">Chang, H., Kwak, H., Puzakova, M., Park, J., &amp; Smit, E.G.</div>
-          <div class="pub-journal">International Journal of Advertising, 34(4), 593–620</div>
-        </div>
-        <span class="pub-badge badge-a">ABDC: A</span>
-      </li>
-    </ul>
-    <div class="pub-more">
-      <a href="#" class="btn-text">View Full Publication List ↓</a>
+<section class="sec">
+  <div class="sec-inner">
+    <p class="sec-label">Explore</p>
+    <h2 class="sec-title">Research, Teaching &amp; Service</h2>
+    <p class="sec-desc">Three areas of academic work, each with its own page.</p>
+    <div class="card-grid">
+      <a class="card" href="research.html"><div class="card-icon">&#9670;</div><h3>Research &rarr;</h3><p>Brand management, digital and AI marketing, and consumer behavior. Publications, work in progress, awards, and grants.</p></a>
+      <a class="card" href="teaching.html"><div class="card-icon">&#9672;</div><h3>Teaching &rarr;</h3><p>Undergraduate and graduate Digital Marketing and Principles of Marketing, with AI-integrated, hands-on instruction.</p></a>
+      <a class="card" href="service.html"><div class="card-icon">&#9671;</div><h3>Service &rarr;</h3><p>University, college, and department committee leadership, journal reviewing, and professional affiliations.</p></a>
     </div>
   </div>
 </section>
 
-<!-- TEACHING -->
-<section id="teaching">
-  <div class="container">
-    <p class="section-label">Teaching</p>
-    <h2 class="section-title">Courses</h2>
-    <p class="section-desc">I teach courses that blend marketing theory with hands-on digital strategy, preparing students for the evolving marketing landscape.</p>
-
-    <div class="course-grid">
-      <div class="course-card">
-        <div>
-          <div class="course-name">Digital Marketing (Graduate)</div>
-          <div class="course-meta">Towson University · 2017–Present</div>
-        </div>
-        <div class="course-rating"><span class="star">★</span> 4.75</div>
-      </div>
-      <div class="course-card">
-        <div>
-          <div class="course-name">Digital Marketing</div>
-          <div class="course-meta">Towson University · 2016–Present</div>
-        </div>
-        <div class="course-rating"><span class="star">★</span> 4.55</div>
-      </div>
-      <div class="course-card">
-        <div>
-          <div class="course-name">Principles of Marketing</div>
-          <div class="course-meta">Towson University · 2016–Present</div>
-        </div>
-        <div class="course-rating"><span class="star">★</span> 4.50</div>
-      </div>
-      <div class="course-card">
-        <div>
-          <div class="course-name">Integrated Marketing Communications</div>
-          <div class="course-meta">Philadelphia University · 2014–2016</div>
-        </div>
-        <div class="course-rating"><span class="star">★</span> 4.40</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact">
-  <div class="container">
-    <p class="section-label">Contact</p>
-    <h2 class="section-title">Get in Touch</h2>
-    <p class="section-desc">I welcome inquiries about research collaborations, graduate programs, and speaking opportunities.</p>
-
-    <div class="contact-grid">
-      <div>
-        <div class="contact-item">
-          <div class="contact-icon">✉</div>
-          <div>
-            <div class="contact-label">Email</div>
-            <div class="contact-value"><a href="mailto:chang@towson.edu">chang@towson.edu</a></div>
-          </div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-icon">☎</div>
-          <div>
-            <div class="contact-label">Office Phone</div>
-            <div class="contact-value">410-704-2426</div>
-          </div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-icon">📍</div>
-          <div>
-            <div class="contact-label">Office</div>
-            <div class="contact-value">Department of Marketing<br>8000 York Road, Towson, MD 21204</div>
-          </div>
-        </div>
-      </div>
-      <div class="contact-map">
-        <div class="map-label">Towson University</div>
-        <div class="map-address">College of Business &amp; Economics<br>Department of Marketing<br>8000 York Road · Towson, MD 21204</div>
-        <div class="towson-logo">Towson University · Est. 1866</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
 <footer>
-  © 2026 Dr. Hua Chang · Associate Professor of Marketing · Towson University
+  <div class="foot-links">
+    <a href="index.html">Home</a><a href="research.html">Research</a><a href="teaching.html">Teaching</a><a href="service.html">Service</a><a href="contact.html">Contact</a>
+  </div>
+  &copy; 2026 Dr. Hua Chang &middot; Professor of Marketing &middot; Towson University
 </footer>
 
 <script>
-  // Navbar scroll effect
-  window.addEventListener('scroll', () => {
-    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 20);
-  });
+var navbar=document.getElementById('navbar');
+window.addEventListener('scroll',function(){navbar.classList.toggle('scrolled',window.scrollY>20);});
+function toggleMobile(){document.getElementById('mobMenu').classList.toggle('open');}
+function togglePubs(btn){var el=document.getElementById('morePubs');el.classList.toggle('show');btn.textContent=el.classList.contains('show')?'Hide Earlier Publications \u2191':'Show Earlier Publications \u2193';}
 </script>
 </body>
 </html>

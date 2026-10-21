@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Research and publications of Dr. Hua Chang: brand management, digital and AI marketing, and consumer behavior.">
+<meta name="theme-color" content="#A51C30">
+<title>Research &amp; Publications | Dr. Hua Chang</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap');
+:root{
+  --crimson:#A51C30;--crimson-dark:#7E1526;--crimson-tint:rgba(165,28,48,.07);--crimson-border:rgba(165,28,48,.3);
+  --ink:#1e1e1e;--text:#2b2b2b;--text-dim:#5f5f5f;
+  --bg:#ffffff;--bg2:#f5f4f1;--card:#ffffff;--border:#e1dfda;
+  --serif:'Source Serif 4',Georgia,'Times New Roman',serif;
+  --page-max:1080px;--radius:4px;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;font-size:15px;overflow-x:hidden;}
+a{color:inherit;}
+
+/* NAV */
+.nav{position:fixed;top:0;width:100%;z-index:999;background:#fff;border-top:4px solid var(--crimson);border-bottom:1px solid var(--border);transition:box-shadow .3s;}
+.nav.scrolled{box-shadow:0 2px 16px rgba(0,0,0,.08);}
+.nav-inner{max-width:var(--page-max);margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 2rem;height:64px;}
+.nav-brand{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.nav-brand-icon{width:34px;height:34px;border-radius:2px;background:var(--crimson);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:700;font-size:.9rem;color:#fff;}
+.nav-brand-text{font-family:var(--serif);font-weight:700;font-size:1.1rem;color:var(--ink);}
+.nav-links{display:flex;gap:.25rem;list-style:none;}
+.nav-links a{display:block;padding:8px 14px;text-decoration:none;font-size:.85rem;font-weight:600;color:var(--ink);border-bottom:2px solid transparent;transition:all .2s;}
+.nav-links a:hover{color:var(--crimson);}
+.nav-links a.active{color:var(--crimson);border-bottom-color:var(--crimson);}
+.hamburger{display:none;background:none;border:none;cursor:pointer;padding:6px;}
+.hamburger span{display:block;width:22px;height:2px;background:var(--ink);margin:5px 0;}
+.mob-menu{display:none;position:fixed;top:68px;left:0;right:0;background:#fff;border-bottom:1px solid var(--border);padding:1rem 2rem;z-index:998;box-shadow:0 8px 20px rgba(0,0,0,.08);}
+.mob-menu.open{display:block;}
+.mob-menu a{display:block;padding:10px 0;color:var(--ink);text-decoration:none;font-size:.92rem;font-weight:600;border-bottom:1px solid var(--border);}
+.mob-menu a:last-child{border:none;}
+.mob-menu a.active{color:var(--crimson);}
+
+/* HERO */
+.hero{padding:150px 2rem 80px;background:#fff;border-bottom:1px solid var(--border);}
+.hero-inner{max-width:var(--page-max);margin:0 auto;display:grid;grid-template-columns:1fr 280px;gap:3.5rem;align-items:center;}
+.hero-badge{display:inline-block;padding-left:12px;border-left:3px solid var(--crimson);font-size:.75rem;font-weight:700;color:var(--crimson);letter-spacing:.08em;text-transform:uppercase;margin-bottom:1.5rem;}
+.hero h1{font-family:var(--serif);font-size:3.3rem;font-weight:700;line-height:1.1;color:var(--ink);letter-spacing:-.01em;margin-bottom:.75rem;}
+.hero h1 .hl{color:var(--crimson);}
+.hero-sub{font-family:var(--serif);font-size:1.3rem;color:var(--text);margin-bottom:1.25rem;}
+.hero-roles{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.75rem;}
+.hero-role{padding:6px 12px;background:var(--bg2);border:1px solid var(--border);font-size:.8rem;color:var(--text);font-weight:500;}
+.hero-desc{color:var(--text-dim);font-size:.95rem;max-width:540px;line-height:1.75;margin-bottom:2rem;}
+.hero-cta{display:flex;gap:.75rem;flex-wrap:wrap;}
+.hero-photo{width:290px;height:300px;overflow:hidden;border:1px solid var(--border);border-bottom:4px solid var(--crimson);background:var(--bg2);display:flex;align-items:center;justify-content:center;box-shadow:0 12px 30px rgba(0,0,0,.08);}
+.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center 25%;display:block;}
+.photo-ph{text-align:center;color:var(--text-dim);font-size:.8rem;padding:1.5rem;}
+.photo-ph .ini{font-family:var(--serif);font-size:3.2rem;font-weight:700;color:var(--crimson);display:block;margin-bottom:.5rem;}
+
+/* BUTTONS */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 26px;border-radius:2px;font-size:.85rem;font-weight:600;text-decoration:none;cursor:pointer;transition:all .2s;}
+.btn-primary{background:var(--crimson);color:#fff;border:1px solid var(--crimson);}
+.btn-primary:hover{background:var(--crimson-dark);border-color:var(--crimson-dark);}
+.btn-outline{background:#fff;color:var(--ink);border:1px solid var(--ink);}
+.btn-outline:hover{background:var(--ink);color:#fff;}
+
+/* SECTIONS */
+.sec{padding:5rem 2rem;}
+.sec-alt{background:var(--bg2);}
+.sec-inner{max-width:var(--page-max);margin:0 auto;}
+.sec-label{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--crimson);margin-bottom:.5rem;}
+.sec-title{font-family:var(--serif);font-size:2rem;font-weight:700;color:var(--ink);margin-bottom:.5rem;line-height:1.25;}
+.sec-desc{font-size:.95rem;color:var(--text-dim);max-width:640px;margin-bottom:2.5rem;line-height:1.75;}
+.page-hero{padding:140px 2rem 50px;background:#fff;border-bottom:1px solid var(--border);}
+.page-hero h1{font-family:var(--serif);font-size:2.6rem;font-weight:700;color:var(--ink);margin-bottom:.75rem;line-height:1.15;}
+.page-hero h1::after{content:'';display:block;width:56px;height:4px;background:var(--crimson);margin-top:1rem;}
+.page-hero .sec-desc{margin-bottom:0;}
+.mt{margin-top:1.5rem;}
+
+/* STATS */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:2rem;}
+.stat-card{text-align:center;padding:1.25rem .75rem;background:#fff;border:1px solid var(--border);border-top:3px solid var(--crimson);}
+.stat-num{font-family:var(--serif);font-size:1.9rem;font-weight:700;color:var(--crimson);display:block;line-height:1.2;}
+.stat-lbl{font-size:.68rem;color:var(--text-dim);margin-top:4px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;}
+
+/* CARDS */
+.card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;}
+.card{display:block;padding:1.5rem;background:#fff;border:1px solid var(--border);border-radius:var(--radius);transition:all .2s;text-decoration:none;}
+.card:hover{border-color:var(--crimson);box-shadow:0 8px 22px rgba(0,0,0,.07);transform:translateY(-2px);}
+.card-icon{width:40px;height:40px;border-radius:2px;background:var(--crimson-tint);display:flex;align-items:center;justify-content:center;color:var(--crimson);font-size:1.1rem;margin-bottom:1rem;}
+.card h3{font-family:var(--serif);font-size:1.1rem;font-weight:700;color:var(--ink);margin-bottom:.4rem;}
+.card p{font-size:.85rem;color:var(--text-dim);line-height:1.6;}
+.card.center{text-align:center;}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1fr 340px;gap:2.5rem;}
+.about-text p{margin-bottom:1rem;line-height:1.8;font-size:.95rem;}
+.sidebar{background:#fff;border:1px solid var(--border);border-top:4px solid var(--crimson);padding:1.75rem;align-self:start;}
+.sidebar-title{font-family:var(--serif);font-weight:700;font-size:1.05rem;color:var(--ink);margin-bottom:1rem;padding-bottom:.5rem;border-bottom:1px solid var(--border);}
+.sidebar-title.next{margin-top:1.5rem;}
+.edu-item{margin-bottom:1rem;}
+.edu-degree{font-weight:600;font-size:.9rem;color:var(--ink);}
+.edu-school{font-size:.8rem;color:var(--text-dim);}
+.cert-list{list-style:none;}
+.cert-list li{display:flex;gap:8px;margin-bottom:.5rem;font-size:.83rem;}
+.cert-list li::before{content:'✓';color:var(--crimson);font-weight:800;flex-shrink:0;}
+
+/* PUBLICATIONS */
+.pub-list{list-style:none;}
+.pub-item{padding:1.25rem 0;border-bottom:1px solid var(--border);display:grid;grid-template-columns:68px 1fr auto;gap:1rem;align-items:start;}
+.pub-year{font-family:var(--serif);font-size:1rem;font-weight:700;color:var(--crimson);padding-top:2px;}
+.pub-year.review{color:var(--crimson-dark);font-family:'Inter',sans-serif;font-size:.75rem;text-transform:uppercase;letter-spacing:.04em;}
+.pub-year.wip{color:var(--text-dim);font-family:'Inter',sans-serif;font-size:.75rem;text-transform:uppercase;letter-spacing:.04em;}
+.pub-title{font-family:var(--serif);font-weight:600;font-size:1rem;color:var(--ink);margin-bottom:3px;line-height:1.45;}
+.pub-authors{font-size:.82rem;color:var(--text-dim);margin-bottom:3px;}
+.pub-journal{font-size:.82rem;font-style:italic;color:var(--text);}
+.pub-badge{padding:3px 9px;border-radius:2px;font-size:.66rem;font-weight:700;white-space:nowrap;margin-top:3px;}
+.badge-astar{background:var(--crimson);color:#fff;}
+.badge-a{background:var(--crimson-tint);color:var(--crimson);border:1px solid var(--crimson-border);}
+.badge-b{background:#eceae5;color:var(--ink);}
+.badge-c{background:#f3f2ef;color:var(--text-dim);}
+.sub-head{font-family:var(--serif);font-size:1.35rem;font-weight:700;color:var(--ink);margin:2.5rem 0 .5rem;}
+.expand-btn{background:#fff;border:1px solid var(--crimson);color:var(--crimson);padding:10px 24px;border-radius:2px;font-size:.82rem;font-weight:600;cursor:pointer;margin-top:1.5rem;transition:all .2s;font-family:inherit;}
+.expand-btn:hover{background:var(--crimson);color:#fff;}
+.hidden-pubs{display:none;}
+.hidden-pubs.show{display:block;}
+
+/* AWARDS */
+.award-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;}
+.award-card{padding:1.25rem;background:#fff;border:1px solid var(--border);border-left:3px solid var(--crimson);}
+.award-card h4{font-family:var(--serif);font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:.25rem;}
+.award-card p{font-size:.8rem;color:var(--text-dim);line-height:1.5;}
+
+/* COURSES */
+.course-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;}
+.course-card{padding:1.25rem 1.5rem;background:#fff;border:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;gap:1rem;transition:border-color .2s;}
+.course-card:hover{border-color:var(--crimson);}
+.course-name{font-family:var(--serif);font-weight:700;font-size:1rem;color:var(--ink);}
+.course-meta{font-size:.8rem;color:var(--text-dim);margin-top:3px;}
+.course-rating{font-weight:700;font-size:.9rem;color:var(--crimson);white-space:nowrap;}
+
+/* SERVICE */
+.svc-group{margin-bottom:2.5rem;}
+.svc-group:last-child{margin-bottom:0;}
+.svc-group-title{font-family:var(--serif);font-size:1.2rem;font-weight:700;color:var(--ink);margin-bottom:.75rem;padding-bottom:.5rem;border-bottom:2px solid var(--crimson);display:flex;align-items:center;gap:10px;}
+.svc-group-title .ico{width:30px;height:30px;border-radius:2px;background:var(--crimson-tint);display:inline-flex;align-items:center;justify-content:center;font-size:.85rem;}
+.svc-item{padding:.85rem 0;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:baseline;gap:1rem;}
+.svc-item:last-child{border:none;}
+.svc-role{font-size:.9rem;font-weight:500;color:var(--ink);}
+.svc-role strong{color:var(--crimson);}
+.svc-detail{font-size:.8rem;color:var(--text-dim);white-space:nowrap;}
+.reviewer-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.75rem;}
+.reviewer-item{padding:.8rem 1rem;background:#fff;border:1px solid var(--border);font-size:.85rem;color:var(--ink);display:flex;justify-content:space-between;align-items:center;gap:1rem;}
+.reviewer-item .yrs{font-size:.75rem;color:var(--text-dim);white-space:nowrap;}
+
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;}
+.contact-item{display:flex;gap:1rem;align-items:flex-start;margin-bottom:1.5rem;}
+.contact-icon{width:42px;height:42px;border-radius:2px;background:var(--crimson-tint);display:flex;align-items:center;justify-content:center;color:var(--crimson);font-size:1rem;flex-shrink:0;}
+.contact-label{font-size:.7rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:.06em;font-weight:600;margin-bottom:2px;}
+.contact-value{font-size:.95rem;color:var(--ink);}
+.contact-value a{color:var(--crimson);text-decoration:none;font-weight:500;}
+.contact-value a:hover{text-decoration:underline;}
+.contact-map{background:var(--ink);color:#fff;border-top:4px solid var(--crimson);padding:2rem;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;min-height:240px;}
+.map-label{font-family:var(--serif);font-size:1.35rem;font-weight:700;color:#fff;margin-bottom:.4rem;}
+.map-addr{font-size:.85rem;color:rgba(255,255,255,.75);line-height:1.6;}
+.map-badge{margin-top:1.25rem;padding-top:1.25rem;border-top:1px solid rgba(255,255,255,.15);font-size:.75rem;color:rgba(255,255,255,.6);letter-spacing:.06em;text-transform:uppercase;}
+
+/* FOOTER */
+footer{background:var(--ink);padding:2.5rem 2rem;text-align:center;font-size:.8rem;color:rgba(255,255,255,.65);border-top:4px solid var(--crimson);}
+.foot-links{display:flex;flex-wrap:wrap;gap:1.5rem;justify-content:center;margin-bottom:1rem;}
+.foot-links a{color:#fff;text-decoration:none;font-weight:600;font-size:.85rem;}
+.foot-links a:hover{text-decoration:underline;}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+.hero-inner,.about-grid,.contact-grid{grid-template-columns:1fr;}
+.hero-inner{text-align:center;}
+.hero-photo{margin:0 auto;order:-1;width:220px;height:228px;}
+.hero-roles,.hero-cta{justify-content:center;}
+.hero h1{font-size:2.4rem;}
+.stats{grid-template-columns:repeat(2,1fr);}
+.card-grid,.course-grid,.reviewer-grid,.award-grid{grid-template-columns:1fr;}
+.pub-item{grid-template-columns:56px 1fr;}
+.pub-badge{display:none;}
+.svc-item{flex-direction:column;gap:2px;}
+.nav-links{display:none;}
+.hamburger{display:block;}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav" id="navbar">
+  <div class="nav-inner">
+    <a class="nav-brand" href="index.html"><div class="nav-brand-icon">HC</div><span class="nav-brand-text">Dr. Hua Chang</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="research.html" class="active">Research</a></li>
+      <li><a href="teaching.html">Teaching</a></li>
+      <li><a href="service.html">Service</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="hamburger" onclick="toggleMobile()" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mob-menu" id="mobMenu">
+  <a href="index.html">Home</a>
+  <a href="research.html" class="active">Research</a>
+  <a href="teaching.html">Teaching</a>
+  <a href="service.html">Service</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<section class="page-hero">
+  <div class="sec-inner">
+    <p class="sec-label">Research</p>
+    <h1>Publications &amp; Scholarship</h1>
+    <p class="sec-desc">My research investigates how brands connect with consumers in digital environments, with a focus on brand strategy, AI-driven personalization, and ethical consumption.</p>
+  </div>
+</section>
+
+<section class="sec sec-alt">
+  <div class="sec-inner">
+    <p class="sec-label">Focus</p>
+    <h2 class="sec-title">Research Areas</h2>
+    <div class="card-grid mt">
+      <div class="card"><div class="card-icon">&#9670;</div><h3>Brand Management</h3><p>Brand positioning and ownership, artist-brand alliances, cross-border brand acquisitions, brand moral failures, and customization.</p></div>
+      <div class="card"><div class="card-icon">&#9672;</div><h3>Digital &amp; AI Marketing</h3><p>Human-AI collaboration in customer service, AI-driven personalization, consumer responses to AI-generated content, and social media engagement.</p></div>
+      <div class="card"><div class="card-icon">&#9671;</div><h3>Consumer Behavior</h3><p>Construal level, psychological ownership, ethical judgment, green advertising, and perceived authenticity.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="sec-inner">
+    <p class="sec-label">Towson AI Institute</p>
+    <h2 class="sec-title">Faculty Lead: Human-AI Interaction</h2>
+    <p class="sec-desc">As a Faculty Lead at the Towson AI Institute (TAI), I build cross-disciplinary research collaborations on human-AI interaction in consumer and organizational contexts, connecting researchers in marketing, computer science, and information systems.</p>
+    <div class="card-grid">
+      <div class="card"><div class="card-icon">&#9881;</div><h3>Human-AI Service</h3><p>Experiments on how consumers evaluate and trust human-only, AI-only, and hybrid human-AI customer service.</p></div>
+      <div class="card"><div class="card-icon">&#10022;</div><h3>Authenticity in AI Advertising</h3><p>How consumers judge the authenticity of advertising created with generative AI.</p></div>
+      <div class="card"><div class="card-icon">&#9678;</div><h3>AI-Personalized Communication</h3><p>How AI-personalized brand messages on social media shape consumer engagement.</p></div>
+    </div>
+    <h3 class="sub-head">TAI Initiatives</h3>
+    <div class="award-grid mt">
+      <div class="award-card"><h4>Joint Grant Proposals</h4><p>Cross-disciplinary funding proposals on applied AI and consumer behavior.</p></div>
+      <div class="award-card"><h4>Co-Authored Empirical Research</h4><p>Collaborative studies of human-AI interaction across colleges.</p></div>
+      <div class="award-card"><h4>Cross-College Workshop Series</h4><p>Connecting marketing, computer science, and information systems researchers on applied AI.</p></div>
+      <div class="award-card"><h4>TAI Profile</h4><p><a href="https://www.towson.edu/academics/research/ai-institute/people.html" style="color:var(--crimson);font-weight:600;">View on the Towson AI Institute site &rarr;</a></p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="border-top:1px solid var(--border);">
+  <div class="sec-inner">
+    <p class="sec-label">Refereed Journals</p>
+    <h2 class="sec-title">Journal Publications</h2>
+    <ul class="pub-list">
+      <li class="pub-item"><span class="pub-year">In Press</span><div><div class="pub-title">Going the Extra Mile: Engaging Consumers through AI Personalized Communication on Social Media</div><div class="pub-authors">Chang, H., Zhang, L., Lei, S., &amp; Yan, M.</div><div class="pub-journal">Journal of Marketing Communications (forthcoming)</div></div><span class="pub-badge badge-b">ABDC B</span></li>
+      <li class="pub-item"><span class="pub-year">2025</span><div><div class="pub-title">Let's Focus on the Magic of an Artist: The Artist Contagion Effect on Products that Feature Art</div><div class="pub-authors">Kim, P. &amp; Chang, H.</div><div class="pub-journal">European Journal of Marketing, 59(1), 1&ndash;20</div></div><span class="pub-badge badge-astar">ABDC A*</span></li>
+      <li class="pub-item"><span class="pub-year">2023</span><div><div class="pub-title">When Does Customization Improve Brand Attitude?</div><div class="pub-authors">Kim, P., Chang, H., Vaidyanathan, R., &amp; Stoel, L.</div><div class="pub-journal">Journal of Product &amp; Brand Management, 32(8), 1233&ndash;1247</div></div><span class="pub-badge badge-a">ABDC A</span></li>
+      <li class="pub-item"><span class="pub-year">2023</span><div><div class="pub-title">Mental Conversion: A Customer Service Strategy Impacting Shopping Experiences</div><div class="pub-authors">Meng, Y., Gould, S. J., Song, L., Chang, H., &amp; Vaziri, S.</div><div class="pub-journal">Journal of Services Marketing, 37(4), 464&ndash;477</div></div><span class="pub-badge badge-a">ABDC A</span></li>
+      <li class="pub-item"><span class="pub-year">2022</span><div><div class="pub-title">An Integrated Model of Congruence and Credibility in Celebrity Endorsement</div><div class="pub-authors">Lee, J.-S., Chang, H., &amp; Zhang, L.</div><div class="pub-journal">International Journal of Advertising, 41(7), 1358&ndash;1381</div></div><span class="pub-badge badge-a">ABDC A</span></li>
+      <li class="pub-item"><span class="pub-year">2022</span><div><div class="pub-title">Contesting Dishonesty: When and Why Perspective-Taking Decreases Ethical Tolerance of Marketplace Deception</div><div class="pub-authors">Xie, G.-X., Chang, H., &amp; Rank-Christman, T.</div><div class="pub-journal">Journal of Business Ethics, 175, 117&ndash;133</div></div><span class="pub-badge badge-a">ABDC A</span></li>
+      <li class="pub-item"><span class="pub-year">2021</span><div><div class="pub-title">How Counterfeit Dominance Affects Luxury Fashion Brand Owners' Perceptions: A Cross-Cultural Examination</div><div class="pub-authors">Song, L., Meng, Y., Chang, H., Li, W., &amp; Tan, K.</div><div class="pub-journal">Journal of Business Research, 130, 1&ndash;13</div></div><span class="pub-badge badge-a">ABDC A</span></li>
+      <li class="pub-item"><span class="pub-year">2020</span><div><div class="pub-title">Hook, Line, and Sinker: Catching and Maintaining Students' Attention with Marketing Hooks</div><div class="pub-authors">Magnotta, S., Thomas, V. L., Steffes, E., Chang, H., &amp; Vinuales, G.</div><div class="pub-journal">Marketing Education Review, 1&ndash;7</div></div><span class="pub-badge badge-c">ABDC C</span></li>
+      <li class="pub-item"><span class="pub-year">2019</span><div><div class="pub-title">Not All Organic Food Is Created Equal: The Role of Product Type, Perceived Authenticity, and Construal Level</div><div class="pub-authors">Chang, H., Zhang, L., &amp; Lee, J.-S.</div><div class="pub-journal">Journal of Marketing Communications, 25(8), 820&ndash;842</div></div><span class="pub-badge badge-b">ABDC B</span></li>
+      <li class="pub-item"><span class="pub-year">2019</span><div><div class="pub-title">Psychological Contract Breach and Customer Satisfaction: A Study of Online Shopping</div><div class="pub-authors">Chang, H. &amp; Zhang, L.</div><div class="pub-journal">Services Marketing Quarterly, 40(2), 172&ndash;188</div></div><span class="pub-badge badge-b">ABDC B</span></li>
+    </ul>
+
+    <button class="expand-btn" onclick="togglePubs(this)">Show Earlier Publications &darr;</button>
+
+    <div class="hidden-pubs" id="morePubs">
+      <ul class="pub-list">
+        <li class="pub-item"><span class="pub-year">2018</span><div><div class="pub-title">Artist-Brand Alliances to Target New Consumers: Can Visual Artists Recruit New Consumers to a Brand?</div><div class="pub-authors">Kim, P., Chang, H., Vaidyanathan, R., &amp; Stoel, L.</div><div class="pub-journal">Journal of Product &amp; Brand Management, 27(3), 308&ndash;319</div></div><span class="pub-badge badge-a">ABDC A</span></li>
+        <li class="pub-item"><span class="pub-year">2018</span><div><div class="pub-title">Role-Playing in a Consumption Context: An Experiential Learning Activity Focused on the Consumer Decision-Making Process</div><div class="pub-authors">Thomas, V. L., Magnotta, S. R., Chang, H., &amp; Steffes, E.</div><div class="pub-journal">Marketing Education Review, 28(2), 89&ndash;97</div></div><span class="pub-badge badge-c">ABDC C</span></li>
+        <li class="pub-item"><span class="pub-year">2018</span><div><div class="pub-title">Using Brand Alliances with Artists to Expand Retail Brand Personality</div><div class="pub-authors">Kim, P., Vaidyanathan, R., Chang, H., &amp; Stoel, L.</div><div class="pub-journal">Journal of Business Research, 85, 424&ndash;433</div></div><span class="pub-badge badge-a">ABDC A</span></li>
+        <li class="pub-item"><span class="pub-year">2015</span><div><div class="pub-title">It's No Longer Mine: The Role of Brand Ownership and Advertising in Cross-Border Brand Acquisitions</div><div class="pub-authors">Chang, H., Kwak, H., Puzakova, M., Park, J., &amp; Smit, E. G.</div><div class="pub-journal">International Journal of Advertising, 34(4), 593&ndash;620</div></div><span class="pub-badge badge-a">ABDC A</span></li>
+        <li class="pub-item"><span class="pub-year">2015</span><div><div class="pub-title">Message Framing in Green Advertising: The Effect of Construal Level and Consumer Environmental Concern</div><div class="pub-authors">Chang, H., Zhang, L., &amp; Xie, G.-X.</div><div class="pub-journal">International Journal of Advertising, 34(1), 158&ndash;176</div></div><span class="pub-badge badge-a">ABDC A</span></li>
+        <li class="pub-item"><span class="pub-year">2015</span><div><div class="pub-title">Media Use and Health Behavior in H1N1 Flu Crisis: The Mediating Role of Perceived Knowledge and Fear</div><div class="pub-authors">Zhang, L., Kong, Y., &amp; Chang, H.</div><div class="pub-journal">Atlantic Journal of Communication, 23(2), 67&ndash;80</div></div></li>
+        <li class="pub-item"><span class="pub-year">2013</span><div><div class="pub-title">The Effects of Sports Media Exposure on College Students' Rape Myth Beliefs and Intentions to Intervene in a Sexual Assault</div><div class="pub-authors">Hust, S. J. T., Lei, M., Ren, C., Chang, H., Marett, E. G., &amp; McNab, A. L.</div><div class="pub-journal">Mass Communication and Society, 16(6), 762&ndash;786</div></div></li>
+        <li class="pub-item"><span class="pub-year">2012</span><div><div class="pub-title">Health Promotion Messages in Entertainment Media: Crime Drama Viewership and Intentions to Intervene in a Sexual Assault Situation</div><div class="pub-authors">Hust, S. J. T., Marett, E. G., Lei, M., Chang, H., Ren, C., McNab, A. L., &amp; Adams, P. M.</div><div class="pub-journal">Journal of Health Communication, 18(1), 105&ndash;123</div></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec-alt">
+  <div class="sec-inner">
+    <p class="sec-label">In the Pipeline</p>
+    <h2 class="sec-title">Manuscripts Under Review</h2>
+    <ul class="pub-list">
+      <li class="pub-item"><span class="pub-year review">Review</span><div><div class="pub-title">It's Yours, Not Mine: The Effect of Art Renown on Psychological Ownership and Valuation of Art-Infused Products</div><div class="pub-authors">Kim, P., Chang, H., &amp; Kirk, C.</div><div class="pub-journal">Journal of the Academy of Marketing Science</div></div></li>
+      <li class="pub-item"><span class="pub-year review">Review</span><div><div class="pub-title">From Customizing Products to Possessive Bonds: The Role of Consumer Involvement and Consumer Privacy Concern</div><div class="pub-authors">Chang, H. &amp; Zhang, L.</div><div class="pub-journal">Journal of Interactive Marketing</div></div></li>
+    </ul>
+    <h3 class="sub-head">Research in Progress</h3>
+    <ul class="pub-list">
+      <li class="pub-item"><span class="pub-year wip">WIP</span><div><div class="pub-title">Seeing the Values from Visual References: A Study of Online Product Presentations</div><div class="pub-authors">Chang, H., Jin, Y., &amp; Xie, V.</div><div class="pub-journal">Preparing for International Journal of Research in Marketing</div></div></li>
+      <li class="pub-item"><span class="pub-year wip">WIP</span><div><div class="pub-title">The Brand is Mine: Development and Validation of a Brand Ownership Scale</div><div class="pub-authors">Chang, H., Kwak, H., Puzakova, M., &amp; Taylor, C. R.</div><div class="pub-journal">Preparing for Journal of Brand Management</div></div></li>
+      <li class="pub-item"><span class="pub-year wip">WIP</span><div><div class="pub-title">"My Celebrities" Are Not Like "Others' Celebrities": College Students' Perception of In-Group and Out-Group Celebrities</div><div class="pub-authors">Lee, J.-S., Zhang, L., &amp; Chang, H.</div><div class="pub-journal">Preparing for Journal of Current Issues in Advertising</div></div></li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="sec-inner">
+    <p class="sec-label">Conferences</p>
+    <h2 class="sec-title">Selected Recent Presentations</h2>
+    <ul class="pub-list">
+      <li class="pub-item"><span class="pub-year">2024</span><div><div class="pub-title">Consumer Responses to Brand Customization on the Internet</div><div class="pub-authors">Chang, H. &amp; Zhang, L.</div><div class="pub-journal">Academy of Marketing Science Conference, Coral Gables, FL</div></div></li>
+      <li class="pub-item"><span class="pub-year">2023</span><div><div class="pub-title">Building Consumer-Brand Relationships on Social Media</div><div class="pub-authors">Chang, H. &amp; Zhang, L.</div><div class="pub-journal">Global Marketing Conference, Seoul, Korea</div></div></li>
+      <li class="pub-item"><span class="pub-year">2022</span><div><div class="pub-title">From Personalizing Products to Possessive Bonds: The Role of Consumer Involvement and Consumer Privacy Concern</div><div class="pub-authors">Chang, H. &amp; Zhang, L.</div><div class="pub-journal">Association of Marketing Theory and Practice, Sandestin, FL</div></div></li>
+      <li class="pub-item"><span class="pub-year">2022</span><div><div class="pub-title">How the Conversion between Gains and Losses Impacts Customers' Shopping Experiences</div><div class="pub-authors">Meng, Y., Gould, S. J., Chang, H., Song, L., &amp; Vaziri, S.</div><div class="pub-journal">European Marketing Academy Conference, Budapest, Hungary</div></div></li>
+      <li class="pub-item"><span class="pub-year">2019</span><div><div class="pub-title">When My Brand Does Something Morally Wrong</div><div class="pub-authors">Chang, H. &amp; Zhang, L.</div><div class="pub-journal">Academy of Marketing Science Conference, Vancouver, Canada</div></div></li>
+    </ul>
+    <p class="sec-desc" style="margin-top:1.5rem;margin-bottom:0;">More than 20 refereed conference papers in total. See the full CV for the complete list.</p>
+  </div>
+</section>
+
+<section class="sec sec-alt">
+  <div class="sec-inner">
+    <p class="sec-label">Recognition</p>
+    <h2 class="sec-title">Awards &amp; Grants</h2>
+    <div class="award-grid mt">
+      <div class="award-card"><h4>CBE Summer Research Grants (7 awards)</h4><p>Towson University &middot; 2018, 2019, 2020, 2022, 2023, 2024, 2025</p></div>
+      <div class="award-card"><h4>FDRC SEED Summer Start Up Fund</h4><p>Towson University &middot; 2024 &middot; Using Artificial Intelligence to Provide Personalized Customer Experience</p></div>
+      <div class="award-card"><h4>University FDRC Award</h4><p>Towson University &middot; 2018 &middot; The Effects of Personalization on Brand Personality</p></div>
+      <div class="award-card"><h4>Faculty Research Grant</h4><p>School of Business, Philadelphia University &middot; 2015</p></div>
+      <div class="award-card"><h4>AMA Doctoral Consortium Fellow</h4><p>University of Michigan, Ann Arbor &middot; 2013</p></div>
+      <div class="award-card"><h4>Best Paper Award</h4><p>Marketing Research &amp; Analytics Track, AMA Winter Educators' Conference &middot; 2012</p></div>
+      <div class="award-card"><h4>Top Paper Award</h4><p>Human Communication &amp; Technology Division, NCA &middot; 2008</p></div>
+      <div class="award-card"><h4>Student Leadership &amp; RenMin Academic Scholarships</h4><p>Beihang University, China &middot; 1998&ndash;2000</p></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-links">
+    <a href="index.html">Home</a><a href="research.html">Research</a><a href="teaching.html">Teaching</a><a href="service.html">Service</a><a href="contact.html">Contact</a>
+  </div>
+  &copy; 2026 Dr. Hua Chang &middot; Professor of Marketing &middot; Towson University
+</footer>
+
+<script>
+var navbar=document.getElementById('navbar');
+window.addEventListener('scroll',function(){navbar.classList.toggle('scrolled',window.scrollY>20);});
+function toggleMobile(){document.getElementById('mobMenu').classList.toggle('open');}
+function togglePubs(btn){var el=document.getElementById('morePubs');el.classList.toggle('show');btn.textContent=el.classList.contains('show')?'Hide Earlier Publications \u2191':'Show Earlier Publications \u2193';}
+</script>
+</body>
+</html>
